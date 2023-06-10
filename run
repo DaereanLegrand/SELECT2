@@ -1,0 +1,8 @@
+#!/bin/sh
+
+for i in {0..9}
+do
+    cat data.$i.txt | tail | nc -q 0 -N 0.0.0.0 9034 &
+    echo
+    # cat data.$i.txt | nc -q 0 -N 0.0.0.0 9034 & disown 
+done
